@@ -1,0 +1,17 @@
+[0.548s] Invoking command in '/home/zine/zinosaur_ws/build/DINO_description': PYTHONPATH=/home/zine/zinosaur_ws/build/DINO_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/zine/zinosaur_ws/install/DINO_description/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/zine/zinosaur_ws/build/DINO_description/build --no-deps symlink_data
+[0.776s] running develop
+[0.929s] running egg_info
+[0.929s] writing DINO_description.egg-info/PKG-INFO
+[0.929s] writing dependency_links to DINO_description.egg-info/dependency_links.txt
+[0.929s] writing entry points to DINO_description.egg-info/entry_points.txt
+[0.930s] writing requirements to DINO_description.egg-info/requires.txt
+[0.930s] writing top-level names to DINO_description.egg-info/top_level.txt
+[0.931s] reading manifest file 'DINO_description.egg-info/SOURCES.txt'
+[0.932s] writing manifest file 'DINO_description.egg-info/SOURCES.txt'
+[0.934s] running build_ext
+[0.934s] Creating /home/zine/zinosaur_ws/install/DINO_description/lib/python3.10/site-packages/DINO-description.egg-link (link to .)
+[0.935s] 
+[0.935s] Installed /home/zine/zinosaur_ws/build/DINO_description
+[0.935s] running symlink_data
+[0.935s] symbolically linking /home/zine/zinosaur_ws/build/DINO_description/launch/IKtest.launch.py -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/launch
+[0.956s] Invoked command in '/home/zine/zinosaur_ws/build/DINO_description' returned '0': PYTHONPATH=/home/zine/zinosaur_ws/build/DINO_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/zine/zinosaur_ws/install/DINO_description/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/zine/zinosaur_ws/build/DINO_description/build --no-deps symlink_data

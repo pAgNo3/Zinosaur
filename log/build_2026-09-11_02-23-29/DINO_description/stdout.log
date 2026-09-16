@@ -1,0 +1,61 @@
+running develop
+running egg_info
+creating DINO_description.egg-info
+writing DINO_description.egg-info/PKG-INFO
+writing dependency_links to DINO_description.egg-info/dependency_links.txt
+writing entry points to DINO_description.egg-info/entry_points.txt
+writing requirements to DINO_description.egg-info/requires.txt
+writing top-level names to DINO_description.egg-info/top_level.txt
+writing manifest file 'DINO_description.egg-info/SOURCES.txt'
+reading manifest file 'DINO_description.egg-info/SOURCES.txt'
+writing manifest file 'DINO_description.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/zine/zinosaur_ws/install/DINO_description/lib/python3.10/site-packages/DINO-description.egg-link (link to .)
+
+Installed /home/zine/zinosaur_ws/build/DINO_description
+running symlink_data
+creating /home/zine/zinosaur_ws/install/DINO_description/share/ament_index
+creating /home/zine/zinosaur_ws/install/DINO_description/share/ament_index/resource_index
+creating /home/zine/zinosaur_ws/install/DINO_description/share/ament_index/resource_index/packages
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/resource/DINO_description -> /home/zine/zinosaur_ws/install/DINO_description/share/ament_index/resource_index/packages
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/package.xml -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description
+creating /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/launch
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/launch/gazebo.launch.py -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/launch
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/launch/display.launch.py -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/launch
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/launch/zinobalance.launch.py -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/launch
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/launch/zinoTester.launch.py -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/launch
+creating /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/urdf
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/urdf/zino.xml -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/urdf
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/urdf/DINO.gazebo -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/urdf
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/urdf/DINO.xacro -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/urdf
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/urdf/materials.xacro -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/urdf
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/urdf/DINO.trans -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/urdf
+creating /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/rightrod_link_1.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/rightlr_link_1.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/camera_link_1.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/lowerrightjaw_link_1.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/upperlefttibia_link_1.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/base_link.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/leftwheel_link_1.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/upperrightjaw_link_1.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/rightmotorjoiner_link_1.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/leftmotorjoiner_link_1.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/lowerleftfemur_link_1.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/rightwheel_link_1.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/rightheim_link_1.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/lowerleftjaw_link_1.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/leftrod_link_1.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/upperleftfemur_link_1.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/leftheim_link_1.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/lowerlefttibia_link_1.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/upperleftjaw_link_1.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/lowerrighttibia_link_v1_1.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/lowerrightfemur_link_1.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/upperrightfemur_link_1.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/leftlr_link_1.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/meshes/upperrighttibia_link_1.stl -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/meshes
+creating /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/config
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/config/ros_gz_bridge_gazebo.yaml -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/config
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/config/display.rviz -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/config
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/config/gazebo.rviz -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/config

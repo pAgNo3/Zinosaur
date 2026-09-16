@@ -1,0 +1,253 @@
+<mujoco model="zino">
+  <compiler angle="radian" inertiafromgeom="auto"/>
+  
+  <default>
+    <joint armature="0.01" damping="1.0"/>
+  </default>
+
+  <equality>
+    <weld name="leftmotorhold_joint" body1="lowerlefttibia_link_1" body2="leftmotorjoiner_link_1" />
+    <weld name="rightmotorhold_joint" body1="lowerrighttibia_link_v1_1" body2="rightmotorjoiner_link_1" />
+    <weld name="rightrodhold_joint" body1="rightrod_link_1" body2="rightlr_link_1" />
+    <weld name="leftrodhold_joint" body1="leftrod_link_1" body2="leftlr_link_1" />
+  </equality>
+
+  <asset>
+    <mesh name="base_link" content_type="model/stl" file="../meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="camera_link_1" content_type="model/stl" file="../meshes/camera_link_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="lowerleftjaw_link_1" content_type="model/stl" file="../meshes/lowerleftjaw_link_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="upperleftjaw_link_1" content_type="model/stl" file="../meshes/upperleftjaw_link_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="upperrightjaw_link_1" content_type="model/stl" file="../meshes/upperrightjaw_link_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="lowerrightjaw_link_1" content_type="model/stl" file="../meshes/lowerrightjaw_link_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="lowerleftfemur_link_1" content_type="model/stl" file="../meshes/lowerleftfemur_link_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="lowerrightfemur_link_1" content_type="model/stl" file="../meshes/lowerrightfemur_link_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="upperleftfemur_link_1" content_type="model/stl" file="../meshes/upperleftfemur_link_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="upperrightfemur_link_1" content_type="model/stl" file="../meshes/upperrightfemur_link_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="lowerlefttibia_link_1" content_type="model/stl" file="../meshes/lowerlefttibia_link_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="lowerrighttibia_link_v1_1" content_type="model/stl" file="../meshes/lowerrighttibia_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="upperlefttibia_link_1" content_type="model/stl" file="../meshes/upperlefttibia_link_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="upperrighttibia_link_1" content_type="model/stl" file="../meshes/upperrighttibia_link_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="leftmotorjoiner_link_1" content_type="model/stl" file="../meshes/leftmotorjoiner_link_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="rightmotorjoiner_link_1" content_type="model/stl" file="../meshes/rightmotorjoiner_link_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="leftheim_link_1" content_type="model/stl" file="../meshes/leftheim_link_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="rightheim_link_1" content_type="model/stl" file="../meshes/rightheim_link_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="rightwheel_link_1" content_type="model/stl" file="../meshes/rightwheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="leftwheel_link_1" content_type="model/stl" file="../meshes/leftwheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="rightrod_link_1" content_type="model/stl" file="../meshes/rightrod_link_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="rightlr_link_1" content_type="model/stl" file="../meshes/rightlr_link_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="leftlr_link_1" content_type="model/stl" file="../meshes/leftlr_link_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="leftrod_link_1" content_type="model/stl" file="../meshes/leftrod_link_1.stl" scale="0.001 0.001 0.001"/>
+  </asset>
+
+  <worldbody>
+    <light diffuse=".5 .5 .5" pos="0 0 3" dir="0 0 -1"/>
+    
+    <!-- Floor Plane (at z = 0) -->
+    <geom type="plane" size="5 5 1" rgba=".8 .8 .8 1" friction="1.0 0.005 0.0001"/>
+
+
+<!--    <body name="red_base_platform" pos="0 0 0.05">
+      <geom type="box" size="0.5 0.05 0.5" rgba="1 0 0 1" friction="1.0 0.005 0.0001"/>
+    </body>
+-->
+    <!-- MAIN CHASSIS BODY (Lowered to z = 0.525m so wheels rest on top of red box) -->
+    <body name="base_link" pos="0 0 0">
+      <site name="origin_check" pos="0 0 0" size="0.01" rgba="1 0 0 1"/>
+      <site name="urs1" pos="0.04 -0.136963 0.52705" size="0.01" rgba="1 0 0 1"/>     
+      <site name="lrs1" pos="-0.04 -0.136963 0.52705" size="0.01" rgba="1 0 0 1"/>  
+      <site name="uls1" pos="0.04 0.136963 0.52705" size="0.01" rgba="1 0 0 1"/> 
+      <site name="lls1" pos="-0.04 0.136963 0.52705" size="0.01" rgba="1 0 0 1"/>               
+      
+      <!-- Freejoint allows translation and rotation in 6 DoF -->
+      <freejoint/>
+
+      <!-- Chassis Visual Meshes -->
+      <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="base_link" mass="2.586"/>
+      <body name="camera_link_1" pos="0.171424 0.0225 0.623549">
+        <inertial pos="0.011946 -0.022562 -0.000022" 
+                  mass="0.072" 
+                  fullinertia="0.000227 0.000032 0.000229 -0.000002 0.0 0.0"/>
+        <geom type="mesh" mesh="camera_link_1" pos="-0.171424 -0.0225 -0.623549" rgba="0.7 0.7 0.7 1"/>
+        <site name="camera_imu_site" pos="0 0 0" size="0.005"/>
+      </body>
+
+      <!-- JAW MECHANISMS -->
+      <body name="lowerleftjaw_link_1" pos="-0.162 0.077584 0.5158">
+        <inertial pos="-1.87206e-09 0.00421285 -1.00356e-09" quat="0.707107 0 0 0.707107" mass="0.0735969" diaginertia="9e-06 7e-06 7e-06"/>
+        <joint name="LLservo_joint" pos="0 0 0" axis="0 -1 0"/>
+        <geom pos="0.162 -0.077584 -0.5158" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="lowerleftjaw_link_1"/>
+      </body>
+
+      <body name="upperleftjaw_link_1" pos="0.162 0.077584 0.5158">
+        <inertial pos="7.13853e-10 0.00421285 -1.71795e-09" quat="0.707107 0 0 0.707107" mass="0.0735969" diaginertia="9e-06 7e-06 7e-06"/>
+        <joint name="ULservo_joint" pos="0 0 0" axis="0 1 0"/>
+        <geom pos="-0.162 -0.077584 -0.5158" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="upperleftjaw_link_1"/>
+      </body>
+
+      <body name="upperrightjaw_link_1" pos="0.162 -0.077584 0.5158">
+        <inertial pos="7.13826e-10 -0.00421285 -1.71796e-09" quat="0.707107 0 0 0.707107" mass="0.0735969" diaginertia="9e-06 7e-06 7e-06"/>
+        <joint name="URservo_joint" pos="0 0 0" axis="0 1 0"/>
+        <geom pos="-0.162 0.077584 -0.5158" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="upperrightjaw_link_1"/>
+      </body>
+
+      <body name="lowerrightjaw_link_1" pos="-0.162 -0.077584 0.5158">
+        <inertial pos="1.87205e-09 -0.00421285 1.00357e-09" quat="0.707107 0 0 0.707107" mass="0.0735969" diaginertia="9e-06 7e-06 7e-06"/>
+        <joint name="LRservo_joint" pos="0 0 0" axis="0 -1 0"/>
+        <geom pos="0.162 0.077584 -0.5158" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="lowerrightjaw_link_1"/>
+      </body>
+
+      <!-- LEFT LEG ASSEMBLY -->
+      <body name="lowerleftfemur_link_1" pos="-0.162 0.114084 0.5158">
+        <inertial pos="-0.0118872 0.0186176 -0.0729198" quat="0.704903 0.0540082 0.0601335 0.704684" mass="0.436" diaginertia="0.00888061 0.00847764 0.000649751"/>
+        <joint name="LLhip_joint" pos="0 0 0" axis="0 -1 0"/>
+        <geom pos="0.162 -0.114084 -0.5158" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="lowerleftfemur_link_1"/>
+        <body name="lowerlefttibia_link_1" pos="-0.022927 -0.001 -0.140643">
+          <inertial pos="0.091624 -0.00415026 -0.126473" quat="0.672687 -0.21703 -0.219054 0.672611" mass="0.241" diaginertia="0.0279392 0.0275565 0.000490335"/>
+          <joint name="LLknee_joint" pos="0 0 0" axis="0 1 0"/>
+          <geom pos="0.184927 -0.113084 -0.375157" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="lowerlefttibia_link_1"/>
+          <body name="leftlr_link_1" pos="0.184929 -0.014 -0.255003">
+            <inertial pos="-2.11581e-07 0.00805131 0.0622723" quat="0.944555 -0.328353 0 0" mass="0.03" diaginertia="0.000295 0.000232102 7.58975e-05"/>
+            <joint name="leftrodrotate_joint" pos="0 0 0" axis="0 1 0"/>
+            <geom pos="-2e-06 -0.099084 -0.120154" type="mesh" rgba="0.7 0.7 0.7 1" mesh="leftlr_link_1"/>
+          </body>
+        </body>
+      </body>
+
+      <!-- RIGHT LEG ASSEMBLY -->
+      <body name="lowerrightfemur_link_1" pos="-0.162 -0.114084 0.5158">
+        <inertial pos="-0.0119046 -0.0186176 -0.072917" quat="0.704659 0.0602347 0.0541063 0.704912" mass="0.436" diaginertia="0.00888061 0.00847733 0.000650063"/>
+        <joint name="LRhip_joint" pos="0 0 0" axis="0 -1 0"/>
+        <geom pos="0.162 0.114084 -0.5158" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="lowerrightfemur_link_1"/>
+        <body name="lowerrighttibia_link_v1_1" pos="-0.022961 0.001 -0.140638">
+          <inertial pos="0.0915321 0.00415062 -0.126515" quat="0.672725 -0.218818 -0.216822 0.672717" mass="0.241" diaginertia="0.0279432 0.0275606 0.00049117"/>
+          <joint name="LRknee_joint" pos="0 0 0" axis="0 1 0"/>
+          <geom pos="0.184961 0.113084 -0.375162" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="lowerrighttibia_link_v1_1"/>
+          <body name="rightlr_link_1" pos="0.184766 0.014 -0.255121">
+            <inertial pos="6.99389e-05 -0.00805132 0.0622726" quat="0.944555 0.328353 0 0" mass="0.03" diaginertia="0.000295 0.000232102 7.58975e-05"/>
+            <joint name="rightrodrotate_joint" pos="0 0 0" axis="0 1 0"/>
+            <geom pos="0.000195 0.099084 -0.120041" type="mesh" rgba="0.7 0.7 0.7 1" mesh="rightlr_link_1"/>
+          </body>
+        </body>
+      </body>
+
+      <!-- UPPER LEFT FEMUR & WHEEL ASSEMBLY -->
+      <body name="upperleftfemur_link_1" pos="0.162 0.114084 0.5158">
+        <inertial pos="0.0118823 0.0210978 -0.0728809" quat="0.703403 -0.0466277 -0.0675348 0.706038" mass="0.436" diaginertia="0.00889231 0.00848883 0.000648868"/>
+        <joint name="ULhip_joint" pos="0 0 0" axis="0 1 0"/>
+        <geom pos="-0.162 -0.114084 -0.5158" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="upperleftfemur_link_1"/>
+        <body name="upperlefttibia_link_1" pos="0.02293 0.042 -0.140643">
+          <inertial pos="-0.0560158 0.00416373 -0.0772407" quat="0.671402 0.216752 0.219696 0.673774" mass="0.172" diaginertia="0.0155624 0.0152398 0.000388806"/>
+          <joint name="ULknee_joint" pos="0 0 0" axis="0 1 0"/>
+          <geom pos="-0.18493 -0.156084 -0.375157" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="upperlefttibia_link_1"/>
+          <body name="leftmotorjoiner_link_1" pos="-0.184928 0.0165 -0.255003">
+            <inertial pos="6.17374e-06 0.00654453 -7.47462e-05" quat="0.709503 0.704692 0.00250802 -0.0028469" mass="0.76" diaginertia="0.004402 0.0044011 0.0021969"/>
+            <joint name="leftmotorfree_joint" pos="0 0 0" axis="0 1 0"/>
+            <geom pos="-2e-06 -0.172584 -0.120154" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="leftmotorjoiner_link_1"/>
+            <body name="leftwheel_link_1" pos="8.7e-05 0.005 -0.000996">
+ 		 <inertial pos="-1.97204e-07 0.0120001 -2.10744e-07" quat="0.707107 0 0 0.707107" mass="0.48" diaginertia="0.046511 0.023635 0.023635"/>
+ 		 <joint name="leftwheel_joint" pos="0 0 0" axis="0 -1 0"/>
+  		 <geom pos="-8.9e-05 -0.177584 -0.119158" quat="1 0 0 0" type="mesh" 
+     		   	mesh="leftwheel_link_1" rgba="0.7 0.7 0.7 1"
+        		friction="1.1 0.005 0.0002"
+        		solref="0.018 1.0"
+        		solimp="0.9 0.95 0.001 0.5 2"/>
+	    </body>
+          </body>
+        </body>
+      </body>
+
+      <!-- UPPER RIGHT FEMUR & WHEEL ASSEMBLY -->
+      <body name="upperrightfemur_link_1" pos="0.162 -0.114084 0.5158">
+        <inertial pos="0.0117332 -0.0210978 -0.0729051" quat="0.705655 -0.0668452 -0.0458805 0.703901" mass="0.436" diaginertia="0.0088923 0.00848884 0.000648869"/>
+        <joint name="URhip_joint" pos="0 0 0" axis="0 1 0"/>
+        <geom pos="-0.162 0.114084 -0.5158" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="upperrightfemur_link_1"/>
+        <body name="upperrighttibia_link_1" pos="0.022642 -0.042 -0.14069">
+          <inertial pos="-0.0559647 -0.00416488 -0.0772261" quat="0.673838 0.219569 0.216643 0.671414" mass="0.172" diaginertia="0.0155664 0.015243 0.000388596"/>
+          <joint name="URknee_joint" pos="0 0 0" axis="0 1 0"/>
+          <geom pos="-0.184642 0.156084 -0.37511" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="upperrighttibia_link_1"/>
+          <body name="rightmotorjoiner_link_1" pos="-0.184837 -0.0165 -0.255069">
+            <inertial pos="6.50623e-06 -0.00654453 -7.44285e-05" quat="0.704692 0.709503 0.0028469 -0.00250802" mass="0.76" diaginertia="0.004402 0.0044011 0.0021969"/>
+            <joint name="rightmotorfree_joint" pos="0 0 0" axis="0 1 0"/>
+            <geom pos="0.000195 0.172584 -0.120041" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="rightmotorjoiner_link_1"/>
+            <body name="rightwheel_link_1" pos="8.7e-05 -0.005 -0.000996">
+  		<inertial pos="-4.53742e-07 -0.0120001 5.56275e-08" quat="0.707107 0 0 0.707107" mass="0.48" diaginertia="0.046511 0.023635 0.023635"/>
+		 <joint name="rightwheel_joint" pos="0 0 0" axis="0 -1 0"/>
+ 		 <geom pos="0.000108 0.177584 -0.119045" quat="1 0 0 0" type="mesh" 
+   		      mesh="rightwheel_link_1" rgba="0.7 0.7 0.7 1"
+  		      friction="1.1 0.005 0.0002"
+  		      solref="0.018 1.0"
+  		      solimp="0.9 0.95 0.001 0.5 2"/>
+            </body>
+          </body>
+        </body>
+      </body>
+
+      <!-- HEIM SUSPENSION ROD ASSEMBLY -->
+      <body name="leftheim_link_1" pos="0 0.104463 0.52005">
+        <inertial pos="9.20725e-08 0.0305236 -1.32537e-06" quat="0.5 0.5 -0.5 0.5" mass="0.0784258" diaginertia="2.4e-05 2.2e-05 4e-06"/>
+        <joint name="leftheim_joint" pos="0 0 0" axis="0 -1 0"/>
+        <geom pos="0 -0.104463 -0.52005" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="leftheim_link_1"/>
+        <body name="leftrod_link_1" pos="1e-06 0.043 0.007">
+          <site name="uls2" pos="0.04 0.0 0.165205" size="0.01" rgba="1 0 0 1"/>   
+          <site name="lls2" pos="-0.04 0.0 0.165205" size="0.01" rgba="1 0 0 1"/>          
+          <inertial pos="-4.71806e-07 -7.10665e-07 0.036189" quat="0.707107 0 0 0.707107" mass="0.200619" diaginertia="0.005159 0.005116 6e-05"/>
+          <joint name="leftrodslide_joint" pos="0 0 0" axis="-8.3e-05 0 -1" type="slide" range="-0.5 0.5" />
+          <geom pos="-1e-06 -0.147463 -0.52705" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="leftrod_link_1"/>
+        </body>
+      </body>
+
+      <body name="rightheim_link_1" pos="0 -0.104463 0.52005">
+        <inertial pos="4.52302e-08 -0.0305233 1.40357e-06" quat="0.5 0.5 -0.5 0.5" mass="0.0784276" diaginertia="2.4e-05 2.2e-05 4e-06"/>
+        <joint name="rightheim_joint" pos="0 0 0" axis="0 1 0"/>
+        <geom pos="0 0.104463 -0.52005" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="rightheim_link_1"/>
+        <body name="rightrod_link_1" pos="0 -0.043 0.007">
+          <site name="urs2" pos="0.04079 0.0 0.165075" size="0.01" rgba="1 0 0 1"/>      
+          <site name="lrs2" pos="-0.039921 0.0 0.165113" size="0.01" rgba="1 0 0 1"/>      
+          <inertial pos="1.72137e-05 7.10741e-07 0.0360763" quat="0.707107 0.000139855 0.000139855 0.707107" mass="0.200619" diaginertia="0.005159 0.005116 5.99992e-05"/>
+          <joint name="rightrodslide_joint" pos="0 0 0" axis="-1.4e-05 0 1" type="slide" range="-0.5 0.5" />
+          <geom pos="0 0.147463 -0.52705" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="rightrod_link_1"/>
+        </body>
+      </body>
+
+    </body> <!-- END base_link -->
+  </worldbody>
+  
+  <tendon>
+    <spatial name="upperrightspring" stiffness="308" damping="0" springlength="0.1651" width="0.003">
+      <site site="urs1"/>
+      <site site="urs2"/>
+    </spatial>
+    <spatial name="lowerrightspring" stiffness="308" damping="0" springlength="0.1651" width="0.003">
+      <site site="lrs1"/>
+      <site site="lrs2"/>
+    </spatial>
+    <spatial name="upperleftspring" stiffness="308" damping="0" springlength="0.1651" width="0.003">
+      <site site="uls1"/>
+      <site site="uls2"/>
+    </spatial>
+    <spatial name="lowerleftspring" stiffness="308" damping="0" springlength="0.1651" width="0.003">
+      <site site="lls1"/>
+      <site site="lls2"/>
+    </spatial>
+  </tendon>
+ 
+  <sensor>
+    <accelerometer name="camera_imu_accel" site="camera_imu_site"/>
+    <gyro name="camera_imu_gyro" site="camera_imu_site"/>
+    <framequat name="camera_imu_quat" objtype="site" objname="camera_imu_site"/>
+  </sensor> 
+
+  <actuator>
+    <velocity name="left_wheel_motor" joint="leftwheel_joint" kv="1" ctrlrange="-20.94 20.94" forcerange="-1.92 1.92"/>
+    <velocity name="right_wheel_motor" joint="rightwheel_joint" kv="1" ctrlrange="-20.94 20.94" forcerange="-1.92 1.92"/>
+
+<!-- Left Leg Actuators -->
+    <position name="UL_hip_servo" joint="ULhip_joint" kp="45" kv="1.2" />
+    <position name="LL_hip_servo" joint="LLhip_joint" kp="45" kv="1.2" />
+
+    <!-- Right Leg Actuators -->
+    <position name="UR_hip_servo" joint="URhip_joint" kp="45" kv="1.2" />
+    <position name="LR_hip_servo" joint="LRhip_joint" kp="45" kv="1.2" />
+  </actuator>
+
+</mujoco>

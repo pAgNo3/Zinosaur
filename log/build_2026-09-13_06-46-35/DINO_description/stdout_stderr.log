@@ -1,0 +1,15 @@
+running develop
+running egg_info
+writing DINO_description.egg-info/PKG-INFO
+writing dependency_links to DINO_description.egg-info/dependency_links.txt
+writing entry points to DINO_description.egg-info/entry_points.txt
+writing requirements to DINO_description.egg-info/requires.txt
+writing top-level names to DINO_description.egg-info/top_level.txt
+reading manifest file 'DINO_description.egg-info/SOURCES.txt'
+writing manifest file 'DINO_description.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/zine/zinosaur_ws/install/DINO_description/lib/python3.10/site-packages/DINO-description.egg-link (link to .)
+
+Installed /home/zine/zinosaur_ws/build/DINO_description
+running symlink_data
+symbolically linking /home/zine/zinosaur_ws/build/DINO_description/launch/IKtest.launch.py -> /home/zine/zinosaur_ws/install/DINO_description/share/DINO_description/launch

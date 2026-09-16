@@ -1,0 +1,835 @@
+<?xml version="1.0" ?>
+<robot name="DINO" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find DINO_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find DINO_description)/urdf/DINO.trans" />
+<xacro:include filename="$(find DINO_description)/urdf/DINO.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.016843689486485812 0.001553914041139925 0.5682802328179314" rpy="0 0 0"/>
+    <mass value="2.956925280525002"/>
+    <inertia ixx="0.023702" iyy="0.037656" izz="0.05061" ixy="0.000757" iyz="-7.1e-05" ixz="0.002069"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="_camera_link_1">
+  <inertial>
+    <origin xyz="0.01195163139387706 -0.022252726336369853 -6.040289357311934e-05" rpy="0 0 0"/>
+    <mass value="0.3513213158102541"/>
+    <inertia ixx="0.000227" iyy="3.2e-05" izz="0.000229" ixy="-1e-06" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.171424 -0.0225 -0.623849" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/_camera_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.171424 -0.0225 -0.623849" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/_camera_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rightrack_link_1">
+  <inertial>
+    <origin xyz="-0.0003642977603514133 0.044645463290419046 -2.688898169678211e-07" rpy="0 0 0"/>
+    <mass value="0.04299717573470696"/>
+    <inertia ixx="3.5e-05" iyy="1e-06" izz="3.5e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.023131 0.051563 -0.534784" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/rightrack_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.023131 0.051563 -0.534784" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/rightrack_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="leftrack_link_1">
+  <inertial>
+    <origin xyz="-0.00029877759780774435 -0.04463170699906604 -2.688898170788434e-07" rpy="0 0 0"/>
+    <mass value="0.04299717573470696"/>
+    <inertia ixx="3.5e-05" iyy="1e-06" izz="3.5e-05" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.002023 -0.051562 -0.534784" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/leftrack_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.002023 -0.051562 -0.534784" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/leftrack_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rightclutch_link_1">
+  <inertial>
+    <origin xyz="-0.023150638502915488 0.0012483615265814346 -0.017047325649753864" rpy="0 0 0"/>
+    <mass value="1.7791172503112629"/>
+    <inertia ixx="0.000432" iyy="0.033163" izz="0.033283" ixy="-0.0" iyz="1.1e-05" ixz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.023131 0.046563 -0.534784" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/rightclutch_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.023131 0.046563 -0.534784" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/rightclutch_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="leftclutch_link_1">
+  <inertial>
+    <origin xyz="0.002024717287065476 -0.0012473615266087798 -0.017047325649753864" rpy="0 0 0"/>
+    <mass value="1.779117250311263"/>
+    <inertia ixx="0.000432" iyy="0.033163" izz="0.033284" ixy="-0.0" iyz="-1.1e-05" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.002023 -0.046562 -0.534784" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/leftclutch_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.002023 -0.046562 -0.534784" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/leftclutch_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="upperleftjaw_link_1">
+  <inertial>
+    <origin xyz="3.3584246494910985e-15 0.004154150398666248 2.220446049250313e-15" rpy="0 0 0"/>
+    <mass value="0.026828235996922276"/>
+    <inertia ixx="3e-06" iyy="3e-06" izz="3e-06" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.162 -0.077584 -0.5161" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/upperleftjaw_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.162 -0.077584 -0.5161" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/upperleftjaw_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lowerleftjaw_link_1">
+  <inertial>
+    <origin xyz="-6.356026815979021e-15 0.004154150398686968 1.2212453270876722e-15" rpy="0 0 0"/>
+    <mass value="0.026828235996909044"/>
+    <inertia ixx="3e-06" iyy="3e-06" izz="3e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.162 -0.077584 -0.5161" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/lowerleftjaw_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.162 -0.077584 -0.5161" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/lowerleftjaw_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lowerrightjaw_link_1">
+  <inertial>
+    <origin xyz="-2.3120394487818885e-14 -0.00415415039868694 1.7763568394002505e-15" rpy="0 0 0"/>
+    <mass value="0.02682823599690905"/>
+    <inertia ixx="3e-06" iyy="3e-06" izz="3e-06" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.162 0.077584 -0.5161" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/lowerrightjaw_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.162 0.077584 -0.5161" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/lowerrightjaw_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="upperrightjaw_link_1">
+  <inertial>
+    <origin xyz="-1.301736496372996e-14 -0.004154150398721759 1.2212453270876722e-15" rpy="0 0 0"/>
+    <mass value="0.026828235996922276"/>
+    <inertia ixx="3e-06" iyy="3e-06" izz="3e-06" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.162 0.077584 -0.5161" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/upperrightjaw_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.162 0.077584 -0.5161" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/upperrightjaw_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="upperrightfemur_link_1">
+  <inertial>
+    <origin xyz="0.011675519169381476 -0.021644411368216473 -0.0724930242555819" rpy="0 0 0"/>
+    <mass value="0.3969293379016429"/>
+    <inertia ixx="0.001832" iyy="0.001946" izz="0.000188" ixy="1.6e-05" iyz="-0.000102" ixz="0.000272"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.162 0.114084 -0.5161" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/upperrightfemur_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.162 0.114084 -0.5161" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/upperrightfemur_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lowerrightfemur_link_1">
+  <inertial>
+    <origin xyz="-0.013094042230241826 -0.015228670280298381 -0.08011074870139101" rpy="0 0 0"/>
+    <mass value="0.4462865624816977"/>
+    <inertia ixx="0.002044" iyy="0.002165" izz="0.000205" ixy="1.2e-05" iyz="7.2e-05" ixz="-0.000309"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.162 0.114084 -0.5161" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/lowerrightfemur_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.162 0.114084 -0.5161" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/lowerrightfemur_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lowerleftfemur_link_1">
+  <inertial>
+    <origin xyz="-0.013046530233767895 0.015228670280307902 -0.0801185000376557" rpy="0 0 0"/>
+    <mass value="0.4462865624816977"/>
+    <inertia ixx="0.002044" iyy="0.002165" izz="0.000205" ixy="-1.2e-05" iyz="-7.2e-05" ixz="-0.000308"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.162 -0.114084 -0.5161" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/lowerleftfemur_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.162 -0.114084 -0.5161" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/lowerleftfemur_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="upperleftfemur_link_1">
+  <inertial>
+    <origin xyz="0.011830827250802256 0.02164441136819699 -0.0724678400406481" rpy="0 0 0"/>
+    <mass value="0.39692933790164286"/>
+    <inertia ixx="0.001831" iyy="0.001946" izz="0.00019" ixy="-1.7e-05" iyz="0.000102" ixz="0.000275"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.162 -0.114084 -0.5161" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/upperleftfemur_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.162 -0.114084 -0.5161" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/upperleftfemur_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="upperrighttibia_link_1">
+  <inertial>
+    <origin xyz="-0.05597166577360438 -0.004164892799482789 -0.07722107320995003" rpy="0 0 0"/>
+    <mass value="0.17186391146575"/>
+    <inertia ixx="0.001845" iyy="0.002836" izz="0.001003" ixy="8e-06" iyz="1.1e-05" ixz="-0.001286"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.184659 0.156084 -0.375413" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/upperrighttibia_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.184659 0.156084 -0.375413" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/upperrighttibia_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lowerrighttibia_link_1">
+  <inertial>
+    <origin xyz="0.09154130039253948 0.004150620053369372 -0.1265072076373112" rpy="0 0 0"/>
+    <mass value="0.24099661291213023"/>
+    <inertia ixx="0.003326" iyy="0.00509" izz="0.001784" ixy="8e-06" iyz="-1.1e-05" ixz="0.002342"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.184986 0.113084 -0.375466" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/lowerrighttibia_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.184986 0.113084 -0.375466" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/lowerrighttibia_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lowerlefttibia_link_1">
+  <inertial>
+    <origin xyz="0.09162865742745843 -0.0041502548742072265 -0.1264698713499162" rpy="0 0 0"/>
+    <mass value="0.2409671367990008"/>
+    <inertia ixx="0.003323" iyy="0.00509" izz="0.001786" ixy="-8e-06" iyz="1.1e-05" ixz="0.002342"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.184903 -0.113084 -0.375453" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/lowerlefttibia_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.184903 -0.113084 -0.375453" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/lowerlefttibia_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="upperlefttibia_link_1">
+  <inertial>
+    <origin xyz="-0.056014360213219205 0.00416371010981012 -0.07724101175994108" rpy="0 0 0"/>
+    <mass value="0.17179362865203565"/>
+    <inertia ixx="0.001844" iyy="0.002835" izz="0.001003" ixy="-8e-06" iyz="-1.1e-05" ixz="-0.001286"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.18496 -0.156084 -0.375462" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/upperlefttibia_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.18496 -0.156084 -0.375462" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/upperlefttibia_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rightmotorjoiner_link_1">
+  <inertial>
+    <origin xyz="6.780537213588189e-06 -0.006544491263442004 -7.485704826516726e-05" rpy="0 0 0"/>
+    <mass value="3.067596299401117"/>
+    <inertia ixx="0.004402" iyy="0.002197" izz="0.004401" ixy="1e-06" iyz="-1.5e-05" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.000201 0.172584 -0.12036" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/rightmotorjoiner_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.000201 0.172584 -0.12036" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/rightmotorjoiner_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rightmotorjoiner_link_1">
+  <inertial>
+    <origin xyz="6.780537213588189e-06 -0.075044491263442 -7.485704826516726e-05" rpy="0 0 0"/>
+    <mass value="3.067596299401117"/>
+    <inertia ixx="0.004402" iyy="0.002197" izz="0.004401" ixy="1e-06" iyz="-1.5e-05" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.000201 0.104084 -0.12036" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/rightmotorjoiner_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.000201 0.104084 -0.12036" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/rightmotorjoiner_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rightrod_link_1">
+  <inertial>
+    <origin xyz="7.50824286641347e-05 -0.017191632725913827 0.15109076076215253" rpy="0 0 0"/>
+    <mass value="0.2954444897498588"/>
+    <inertia ixx="0.009814" iyy="0.009622" izz="0.000241" ixy="0.0" iyz="0.000895" ixz="-5e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.000201 0.099084 -0.12036" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/rightrod_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.000201 0.099084 -0.12036" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/rightrod_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="leftmotorjoiner_link_1">
+  <inertial>
+    <origin xyz="6.342909367337069e-06 0.006544491263437091 -7.521018997976026e-05" rpy="0 0 0"/>
+    <mass value="3.067596299401116"/>
+    <inertia ixx="0.004402" iyy="0.002197" izz="0.004401" ixy="-1e-06" iyz="1.5e-05" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-3.5e-05 -0.172584 -0.120457" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/leftmotorjoiner_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-3.5e-05 -0.172584 -0.120457" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/leftmotorjoiner_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="leftmotorjoiner_link_1">
+  <inertial>
+    <origin xyz="6.342909367337069e-06 0.07504449126343708 -7.521018997976026e-05" rpy="0 0 0"/>
+    <mass value="3.067596299401116"/>
+    <inertia ixx="0.004402" iyy="0.002197" izz="0.004401" ixy="-1e-06" iyz="1.5e-05" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-3.5e-05 -0.104084 -0.120457" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/leftmotorjoiner_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-3.5e-05 -0.104084 -0.120457" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/leftmotorjoiner_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="leftrod_link_1">
+  <inertial>
+    <origin xyz="-1.2799261330505928e-05 0.01719166317753716 0.15109037309244616" rpy="0 0 0"/>
+    <mass value="0.29544476441965"/>
+    <inertia ixx="0.009814" iyy="0.009622" izz="0.000241" ixy="0.0" iyz="-0.000895" ixz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-3.5e-05 -0.099084 -0.120457" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/leftrod_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-3.5e-05 -0.099084 -0.120457" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/leftrod_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rightrod_link_1">
+  <inertial>
+    <origin xyz="-0.5274759175713358 0.016687367274086165 -0.10143723923784748" rpy="0 0 0"/>
+    <mass value="0.2954444897498588"/>
+    <inertia ixx="0.009814" iyy="0.009622" izz="0.000241" ixy="0.0" iyz="0.000895" ixz="-5e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.52735 0.132963 -0.372888" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/rightrod_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.52735 0.132963 -0.372888" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/rightrod_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="leftrod_link_1">
+  <inertial>
+    <origin xyz="0.5273722007386695 -0.01668633682246283 -0.39626562690755385" rpy="0 0 0"/>
+    <mass value="0.29544476441965"/>
+    <inertia ixx="0.009814" iyy="0.009622" izz="0.000241" ixy="0.0" iyz="-0.000895" ixz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.52735 -0.132962 -0.667813" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/leftrod_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.52735 -0.132962 -0.667813" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/leftrod_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rightwheel_link_1">
+  <inertial>
+    <origin xyz="-9.512180757976119e-08 -0.012000105661230637 -3.298545639962569e-07" rpy="0 0 0"/>
+    <mass value="0.8765678906787113"/>
+    <inertia ixx="0.003286" iyy="0.006468" izz="0.003286" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.000114 0.177584 -0.119364" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/rightwheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.000114 0.177584 -0.119364" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/rightwheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="leftwheel_link_1">
+  <inertial>
+    <origin xyz="1.6796379849999348e-08 0.01200010566122553 3.6495322489060733e-07" rpy="0 0 0"/>
+    <mass value="0.8765678906787113"/>
+    <inertia ixx="0.003286" iyy="0.006468" izz="0.003286" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.000122 -0.177584 -0.11946" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/leftwheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.000122 -0.177584 -0.11946" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/leftwheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="leftheim_link_1">
+  <inertial>
+    <origin xyz="-9.555502746880133e-08 0.030523171375112984 -1.331066928234037e-06" rpy="0 0 0"/>
+    <mass value="0.07842850496506114"/>
+    <inertia ixx="2.2e-05" iyy="4e-06" izz="2.4e-05" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.104463 -0.52035" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/leftheim_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.104463 -0.52035" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/leftheim_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rightheim_link_1">
+  <inertial>
+    <origin xyz="-9.55550491870069e-08 -0.030523171375126112 -1.3318787891458683e-06" rpy="0 0 0"/>
+    <mass value="0.07842850496506122"/>
+    <inertia ixx="2.2e-05" iyy="4e-06" izz="2.4e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.104463 -0.52035" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/rightheim_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.104463 -0.52035" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find DINO_description)/meshes/rightheim_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="camera_joint" type="fixed">
+  <origin xyz="0.171424 0.0225 0.623849" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="_camera_link_1"/>
+</joint>
+
+<joint name="rightrackclutch_joint" type="fixed">
+  <origin xyz="0.0 -0.005 0.0" rpy="0 0 0"/>
+  <parent link="rightclutch_link_1"/>
+  <child link="rightrack_link_1"/>
+</joint>
+
+<joint name="leftrackclutch_joint" type="fixed">
+  <origin xyz="0.0 0.005 0.0" rpy="0 0 0"/>
+  <parent link="leftclutch_link_1"/>
+  <child link="leftrack_link_1"/>
+</joint>
+
+<joint name="rightclutchbase_link" type="fixed">
+  <origin xyz="0.023131 -0.046563 0.534784" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rightclutch_link_1"/>
+</joint>
+
+<joint name="leftclutchbase_link" type="fixed">
+  <origin xyz="-0.002023 0.046562 0.534784" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="leftclutch_link_1"/>
+</joint>
+
+<joint name="upperleftservo_joint" type="continuous">
+  <origin xyz="0.164023 0.031022 -0.018684" rpy="0 0 0"/>
+  <parent link="leftclutch_link_1"/>
+  <child link="upperleftjaw_link_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="lowerleftservo_joint" type="continuous">
+  <origin xyz="-0.159977 0.031022 -0.018684" rpy="0 0 0"/>
+  <parent link="leftclutch_link_1"/>
+  <child link="lowerleftjaw_link_1"/>
+  <axis xyz="-0.0 -1.0 -0.0"/>
+</joint>
+
+<joint name="lowerrightservo_joint" type="continuous">
+  <origin xyz="-0.185131 -0.031021 -0.018684" rpy="0 0 0"/>
+  <parent link="rightclutch_link_1"/>
+  <child link="lowerrightjaw_link_1"/>
+  <axis xyz="-0.0 -1.0 -0.0"/>
+</joint>
+
+<joint name="upperrightservo_joint" type="continuous">
+  <origin xyz="0.138869 -0.031021 -0.018684" rpy="0 0 0"/>
+  <parent link="rightclutch_link_1"/>
+  <child link="upperrightjaw_link_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="upperrighthip_joint" type="continuous">
+  <origin xyz="0.162 -0.114084 0.5161" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="upperrightfemur_link_1"/>
+  <axis xyz="-0.0 -1.0 -0.0"/>
+</joint>
+
+<joint name="lowerrighthip_joint" type="continuous">
+  <origin xyz="-0.162 -0.114084 0.5161" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lowerrightfemur_link_1"/>
+  <axis xyz="-0.0 -1.0 -0.0"/>
+</joint>
+
+<joint name="lowerlefthip_joint" type="continuous">
+  <origin xyz="-0.162 0.114084 0.5161" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lowerleftfemur_link_1"/>
+  <axis xyz="-0.0 -1.0 -0.0"/>
+</joint>
+
+<joint name="upperlefthip_joint" type="continuous">
+  <origin xyz="0.162 0.114084 0.5161" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="upperleftfemur_link_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="upperrightknee_joint" type="continuous">
+  <origin xyz="0.022659 -0.042 -0.140687" rpy="0 0 0"/>
+  <parent link="upperrightfemur_link_1"/>
+  <child link="upperrighttibia_link_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="lowerrightknee_joint" type="continuous">
+  <origin xyz="-0.022986 0.001 -0.140634" rpy="0 0 0"/>
+  <parent link="lowerrightfemur_link_1"/>
+  <child link="lowerrighttibia_link_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="lowerleftknee_joint" type="continuous">
+  <origin xyz="-0.022903 -0.001 -0.140647" rpy="0 0 0"/>
+  <parent link="lowerleftfemur_link_1"/>
+  <child link="lowerlefttibia_link_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="upperleftknee_joint" type="continuous">
+  <origin xyz="0.02296 0.042 -0.140638" rpy="0 0 0"/>
+  <parent link="upperleftfemur_link_1"/>
+  <child link="upperlefttibia_link_1"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="rightmotorfree_joint" type="continuous">
+  <origin xyz="-0.18486 0.052 -0.255053" rpy="0 0 0"/>
+  <parent link="upperrighttibia_link_1"/>
+  <child link="rightmotorjoiner_link_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="rightmotorhold_joint" type="fixed">
+  <origin xyz="0.184785 0.009 -0.255106" rpy="0 0 0"/>
+  <parent link="lowerrighttibia_link_1"/>
+  <child link="rightmotorjoiner_link_1"/>
+</joint>
+
+<joint name="rightrodrotate_joint" type="continuous">
+  <origin xyz="0.712336 -0.019879 -0.002578" rpy="0 0 0"/>
+  <parent link="lowerrighttibia_link_1"/>
+  <child link="rightrod_link_1"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="leftmotorfree_joint" type="continuous">
+  <origin xyz="-0.184925 -0.052 -0.255005" rpy="0 0 0"/>
+  <parent link="upperlefttibia_link_1"/>
+  <child link="leftmotorjoiner_link_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="leftmotorhold_joint" type="fixed">
+  <origin xyz="0.184938 -0.009 -0.254996" rpy="0 0 0"/>
+  <parent link="lowerlefttibia_link_1"/>
+  <child link="leftmotorjoiner_link_1"/>
+</joint>
+
+<joint name="right rodrotate_joint" type="continuous">
+  <origin xyz="-0.342447 0.019878 0.29236" rpy="0 0 0"/>
+  <parent link="lowerlefttibia_link_1"/>
+  <child link="leftrod_link_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="rightrodslider_joint" type="prismatic">
+  <origin xyz="0.52735 -0.0285 -0.147462" rpy="0 0 0"/>
+  <parent link="rightheim_link_1"/>
+  <child link="rightrod_link_1"/>
+  <axis xyz="-0.0 -0.0 1.0"/>
+  <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
+</joint>
+
+<joint name="leftrodslider_joint" type="prismatic">
+  <origin xyz="-0.52735 0.028499 0.147463" rpy="0 0 0"/>
+  <parent link="leftheim_link_1"/>
+  <child link="leftrod_link_1"/>
+  <axis xyz="-0.0 0.0 -1.0"/>
+  <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
+</joint>
+
+<joint name="rightwheel_joint" type="continuous">
+  <origin xyz="8.7e-05 -0.0735 -0.000996" rpy="0 0 0"/>
+  <parent link="rightmotorjoiner_link_1"/>
+  <child link="rightwheel_link_1"/>
+  <axis xyz="-0.0 -1.0 -0.0"/>
+</joint>
+
+<joint name="leftwheel_joint" type="continuous">
+  <origin xyz="8.7e-05 0.0735 -0.000997" rpy="0 0 0"/>
+  <parent link="leftmotorjoiner_link_1"/>
+  <child link="leftwheel_link_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="leftheim_joint" type="continuous">
+  <origin xyz="0.0 0.104463 0.52035" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="leftheim_link_1"/>
+  <axis xyz="0.0 -1.0 -0.0"/>
+</joint>
+
+<joint name="rightheim_joint" type="continuous">
+  <origin xyz="0.0 -0.104463 0.52035" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rightheim_link_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+</robot>

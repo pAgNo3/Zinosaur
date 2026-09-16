@@ -1,0 +1,9 @@
+source;share/DINO_description/hook/pythonpath.ps1
+source;share/DINO_description/hook/pythonpath.dsv
+source;share/DINO_description/hook/pythonpath.sh
+source;share/DINO_description/hook/ament_prefix_path.ps1
+source;share/DINO_description/hook/ament_prefix_path.dsv
+source;share/DINO_description/hook/ament_prefix_path.sh
+source;../../build/DINO_description/share/DINO_description/hook/pythonpath_develop.ps1
+source;../../build/DINO_description/share/DINO_description/hook/pythonpath_develop.dsv
+source;../../build/DINO_description/share/DINO_description/hook/pythonpath_develop.sh
