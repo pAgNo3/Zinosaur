@@ -13,7 +13,7 @@ The aim here is to make a multiterrain capable and robust wheeled biped robot wh
 
 #16/09/26: The bot is able to stand In mujoco using its legs (not only wheels). Trained using SAC for 5L timesteps, entcoeff=15. ROS2 integration is still clanky so mujoco only.
 
-#1/05/26: 
+#1/10/26: 
 The bot is able to stand very well now with great efficiency and is able to resist forces upto 200N!
 https://github.com/user-attachments/assets/f4af71f9-97a7-458c-ad37-f059fffa91b7
 
